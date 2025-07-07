@@ -1,12 +1,5 @@
 <?php
 
-// ====================================================================
-// LOKASI PERBAIKAN: Controller untuk Master Tutorial
-// File: app/Http/Controllers/TutorialController.php
-//
-// Kita akan mengubah method `store` dan `update` untuk menghasilkan
-// dua URL unik yang berbeda.
-// ====================================================================
 
 namespace App\Http\Controllers;
 
@@ -103,9 +96,7 @@ class TutorialController extends Controller
         // Cek jika judul berubah, kita perlu generate ulang KEDUA URL
         if ($request->title !== $tutorial->title) {
             $baseSlug = Str::slug($request->title);
-            // ================================================================
-            // PERUBAHAN UTAMA (2/2): Hasilkan dua slug baru yang berbeda
-            // ================================================================
+
             $tutorial->presentation_url = $baseSlug . '-pres-' . Str::random(10);
             $tutorial->finished_url = $baseSlug . '-pdf-' . Str::random(10);
         }

@@ -27,9 +27,6 @@
             .listen('TutorialStepStatusChanged', (e) => {
                 console.log('Event diterima:', e.newStatus, e.detail);
 
-                // ==========================================================
-                // MENAMBAHKAN JEDA 3 DETIK DENGAN setTimeout
-                // ==========================================================
                 setTimeout(() => {
                     const existingElement = document.getElementById(`step-${e.detail.id}`);
 
